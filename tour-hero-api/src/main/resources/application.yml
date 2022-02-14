@@ -1,0 +1,13 @@
+#Propiedades del servidor
+server:
+  servlet:
+    context-path: /tour-api
+    port:8181
+
+#Propiedades de Spring
+spring:
+  #Dev está activo de forma predeterminada. Este valor puede ser sobrescrito por java arg param
+  profiles:
+    active: heroku
+  application:
+      name: tour-api
