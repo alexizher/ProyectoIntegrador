@@ -1,18 +1,24 @@
 package co.udea.hero.api.model;
 
-import com.sun.javafx.beans.IDProperty;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "heroes")
 public class Hero {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @column(name = "id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column (name = "name")
+    @Column(name = "name")
     private String name;
+
+    public Hero(){
+    }
 
     public Hero(Integer id, String name){
         this.id = id;
