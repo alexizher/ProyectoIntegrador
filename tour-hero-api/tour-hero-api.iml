@@ -85,5 +85,8 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.15" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.15" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.8.4" level="project" />
+    <orderEntry type="library" name="io.swagger.annotations" level="application" />
+    <orderEntry type="library" name="javax.persistence.api" level="application" />
+    <orderEntry type="library" name="springframework.data.spring.jpa" level="application" />
   </component>
 </module>
