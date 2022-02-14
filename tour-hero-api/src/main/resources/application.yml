@@ -11,3 +11,6 @@ spring:
     active: heroku
   application:
       name: tour-api
+  messages:
+    basename: bundles/apiLanguageBundle
+
