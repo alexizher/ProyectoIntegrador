@@ -1,12 +1,13 @@
 package co.udea.hero.api.service;
 
+import co.udea.hero.api.exception.BusinessException;
+import co.udea.hero.api.util.Messages;
 import co.udea.hero.api.model.Hero;
 import co.udea.hero.api.repository.HeroRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import sun.misc.resources.Messages;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,6 +36,23 @@ public class HeroService {
 
     public List<Hero> getHeroes(){
         List<Hero> heroesList = heroRepository.findAll();
+        return heroesList;
+    }
+
+    public Hero postHero(Hero hero){
+        return heroRepository.save(hero);
+    }
+
+    public Hero updateHero(Hero hero) {
+        return heroRepository.save(hero);
+    }
+
+    public void deleteHero(Integer id) {
+        heroRepository.deleteById(id);
+    }
+
+    public List<Hero> searchHeroes(String name) {
+        List<Hero> heroesList = heroRepository.findByName(name);
         return heroesList;
     }
 }
