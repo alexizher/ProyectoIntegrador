@@ -18,6 +18,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/heroes")
 public class HeroController {
+
+    private final Logger log = LoggerFactory.getLogger(HeroController.class);
+
     private HeroService heroService;
 
     public HeroController(HeroService heroService){
@@ -31,7 +34,7 @@ public class HeroController {
     @ApiOperation(value = " Buscar un heroe por su id",  response = Hero.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Hero encontrado existosamente"),
-            @ApiResponse(code = 400, message = "La petición es invalida"),
+            @ApiResponse(code = 400, message = "La petición es inválida"),
             @ApiResponse(code = 500, message = "Error interno al procesar la respuesta")
     })
     public ResponseEntity<Hero> getHero(@PathVariable Integer id){
@@ -43,8 +46,13 @@ public class HeroController {
      * lista todos los heroes creados en la DB
      */
     @GetMapping("")
-    @ApiOperation(value = "Buscar todos los Heroes", response = List.class)
-    public ResponseEntity<List<Hero>> getHeroes(){
+    @ApiOperation(value = " Buscar todos los heroes",  response = List.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Heroes encontrados existosamente"),
+            @ApiResponse(code = 400, message = "La petición es inválida"),
+            @ApiResponse(code = 500, message = "Error interno al procesar la respuesta")
+    })
+       public ResponseEntity<List<Hero>> getHeroes(){
         log.info("Rest request Buscar Heroes");
         return ResponseEntity.ok(heroService.getHeroes());
     }
