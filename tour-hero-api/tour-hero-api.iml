@@ -88,5 +88,7 @@
     <orderEntry type="library" name="io.swagger.annotations" level="application" />
     <orderEntry type="library" name="javax.persistence.api" level="application" />
     <orderEntry type="library" name="springframework.data.spring.jpa" level="application" />
+    <orderEntry type="library" name="slf4j.log4j12" level="application" />
+    <orderEntry type="library" name="slf4j.log4j121" level="application" />
   </component>
 </module>
